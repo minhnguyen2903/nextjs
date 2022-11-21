@@ -1,0 +1,16 @@
+.menu_container {
+  padding: 12px 0;
+  background: #f9f9f9;
+  overflow-x: auto;
+  overflow-y: hidden;
+  nav {
+    height: 100%;
+  }
+}
+
+.menu_flex {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 1em;
+}

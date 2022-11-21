@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme: Theme) => ({
       padding: "0px 1em",
     },
     "& th, & td": {
-      height: "60px",
       paddingTop: "8px",
       paddingBottom: "8px",
       userSelect: "none",

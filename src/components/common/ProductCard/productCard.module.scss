@@ -1,0 +1,30 @@
+.card {
+  border: solid 1px #d1d1d1;
+  border-radius: 12px;
+  &_img {
+    padding: 1em;
+    img {
+      border-radius: 12px;
+    }
+  }
+  &_content {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  &_price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+    align-items: center;
+    button {
+      font-weight: 600;
+      color: white;
+      background: #6a983c;
+      border: solid 2px #46760a;
+      padding: 6.5px 12px;
+      border-radius: 12px;
+    }
+  }
+}

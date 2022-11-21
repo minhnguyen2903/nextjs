@@ -1,0 +1,100 @@
+#app_header {
+  padding: 0 45px;
+  width: 100vw;
+  & > div {
+    width: 100%;
+  }
+  #header_sub {
+    border-bottom: solid 1px #151515;
+    font-size: 0.875em;
+    padding: 16px 0;
+    .header_flex {
+      gap: 1em;
+    }
+    .header_sub_nav {
+      color: green;
+    }
+    @media screen and (max-width: '768px') {
+      display: none;
+    }
+  }
+  #header_main {
+    padding: 40px 0;
+    .header_flex {
+      gap: 1em;
+    }
+    .header_main_center {
+      width: 30%;
+      .header_main_search {
+        @extend %header_flex;
+        width: 100%;
+        background: #f9f9f9;
+        border: solid 1px #d1d1d1;
+        border-radius: 12px;
+        padding: 0 0.5em;
+        .header_main_search_dropdown {
+          border-right: solid 1px grey;
+        }
+        .header_main_search_input {
+          display: flex;
+          align-items: center;
+          position: relative;
+          flex: 1;
+          input {
+            width: 100%;
+            height: 3em;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 0.5em 1em;
+            font-size: 0.875em;
+            border-radius: 12px;
+            padding-right: 3em;
+          }
+          span {
+            width: 2em;
+            height: 2em;
+            padding: 0.4em;
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+%header_flex {
+  display: flex;
+  align-items: center;
+}
+
+.header_flex {
+  @extend %header_flex;
+}
+
+.header_flex_justify_between {
+  justify-content: space-between;
+}
+
+.dropdown_container {
+  @extend %header_flex;
+  gap: 0.25em;
+}
+
+.dropdown_list {
+  position: absolute;
+  width: 100%;
+  background: white;
+  left: 0;
+  top: calc(100% + 1em);
+  border-radius: 12px;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  li {
+    padding: 8px 16px;
+    &:hover {
+      background: beige;
+    }
+  }
+}
