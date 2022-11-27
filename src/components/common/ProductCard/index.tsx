@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import styles from './productCard.module.scss'
 
@@ -5,9 +6,10 @@ const ProductCard = () => {
   return (
     <div className={styles.card}>
       <div className={styles.card_img}>
-        <img
+        <Image
           src="https://assets.adidas.com/images/w_600,f_auto,q_auto/06b0a068db6646669a73ae89001812b9_9366/Giay_Stan_Smith_trang_GX4438_01_standard.jpg"
-          width="100%"
+          width={250}
+          height={250}
           alt="shoe"
         />
       </div>

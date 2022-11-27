@@ -14,8 +14,9 @@ const Dropdown = ({ defaultValue, value, options, onChange }: Props) => {
   const dropdownValue = useRef<string | number | undefined>(
     value || defaultValue
   );
-  const [trigger, setTrigger] = useState(false);
+  const [, forceRerender] = useState(false);
   const dropdownContainerRef = useRef<HTMLDivElement | null>(null);
+
   const [open, setOpen] = useState(false);
   const handleRefChange = (value: string | number) => {
     dropdownValue.current = value;
@@ -59,7 +60,7 @@ const Dropdown = ({ defaultValue, value, options, onChange }: Props) => {
     if (!isSSR && open) {
       window.removeEventListener("resize", () => {});
       window.addEventListener("resize", () => {
-        setTrigger((prev) => !prev);
+        forceRerender((prev) => !prev);
       });
     }
 
@@ -95,10 +96,10 @@ const Dropdown = ({ defaultValue, value, options, onChange }: Props) => {
         ReactDom.createPortal(
           <PortalContainer
             top={
-              (dropdownContainerRef.current?.offsetTop || 0) +
+              (dropdownContainerRef.current?.getBoundingClientRect().top || 0) +
               (dropdownContainerRef.current?.offsetHeight || 0)
             }
-            left={dropdownContainerRef.current?.offsetLeft}
+            left={dropdownContainerRef.current?.getBoundingClientRect().left}
           >
             <div className={styles.dropdown_list}>
               <ul>{renderOptions}</ul>
